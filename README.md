@@ -1,55 +1,27 @@
 # FraserHacks2026
 
-- 🧠 Smart Waste Sorter
-🚀 Overview
-A real-time smart waste sorting system that uses a webcam and computer vision to classify objects as recycling or trash, then physically sorts them using an Arduino-controlled servo.
+This project is a simple system that can recognize whether something is trash or recycling and then physically sort it.
 
-🎯 Features
-📷 Live webcam input
+We use a webcam to look at an object, process it with computer vision (and optionally a trained model), and then send a signal to an Arduino. The Arduino moves a servo to direct the item into the correct bin.
 
-🎨 Color-based detection (brown = recycling, blue = trash)
+Why we made it
+Sorting waste properly is a real problem, and people often get it wrong. We wanted to build something interactive that shows how automation + AI can help with sustainability in a practical way.
 
-🤖 Optional ML integration (Teachable Machine .h5 model)
 
-🔌 Serial communication (Python → Arduino)
+How it works (high level)
+- Webcam captures live video
+- Python processes the frame
+- Detects whether it is trash or recycling
+- Signal is sent to arduino
+- A panel turns and object is sorted
 
-⚙️ Physical sorting using a servo motor
-
-🛠️ Tech Stack
-Software:
-
-Python
-
-OpenCV (cv2)
-
-NumPy
-
-PySerial
-
-(Optional) TensorFlow / Keras
+Python/software:
+- OpenCV
+- NumPy
+- PySerial
+- (Optional) TensorFlow / Keras model
 
 Hardware:
-
-Arduino (Uno / ESP32)
-
-Servo Motor
-
-USB connection (serial)
-
-🧩 How It Works
-Webcam captures live video
-
-Frame is processed using OpenCV
-
-System detects:
-
-Brown → Recycling (R)
-
-Blue → Trash (T)
-
-Python sends command via serial
-
-Arduino receives command and rotates servo
-
-Trash is physically sorted
-
+- Arduino
+- Servo motor
+- USB connection
